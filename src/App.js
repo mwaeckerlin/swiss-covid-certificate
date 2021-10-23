@@ -3,9 +3,21 @@ import React from "react"
 import QRCode from "react-qr-code"
 
 const App = () => {
-  const [edit, setEdit] = React.useState(false)
-  const [name, setName] = React.useState('Peter Muster')
-  const [birthday, setBirthday] = React.useState("1970-01-01")
+  const useStickyState = (defaultValue, key) => {
+    const [value, setValue] = React.useState(() => {
+      const stickyValue = window.localStorage.getItem(key);
+      return stickyValue !== null
+        ? JSON.parse(stickyValue)
+        : defaultValue;
+    })
+    React.useEffect(() => {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    }, [key, value])
+    return [value, setValue];
+  }
+  const [edit, setEdit] = useStickyState(false, 'edit')
+  const [name, setName] = useStickyState('Peter Muster', 'name')
+  const [birthday, setBirthday] = useStickyState("1970-01-01", 'birthday')
   const format = date => date.toLocaleDateString('de-CH', { day: '2-digit', month: '2-digit', year: 'numeric' })
   const [date1, date2, date3] = [new Date(), new Date(), new Date()]
   date1.setMonth(date1.getMonth() + 10)
