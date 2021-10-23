@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/swiss-covid-certificate/static/js/main.6bcb56dd.chunk.js",
-    "main.js.map": "/swiss-covid-certificate/static/js/main.6bcb56dd.chunk.js.map",
+    "main.js": "/swiss-covid-certificate/static/js/main.18ea5823.chunk.js",
+    "main.js.map": "/swiss-covid-certificate/static/js/main.18ea5823.chunk.js.map",
     "runtime-main.js": "/swiss-covid-certificate/static/js/runtime-main.baf134ae.js",
     "runtime-main.js.map": "/swiss-covid-certificate/static/js/runtime-main.baf134ae.js.map",
     "static/js/2.37619633.chunk.js": "/swiss-covid-certificate/static/js/2.37619633.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.baf134ae.js",
     "static/js/2.37619633.chunk.js",
-    "static/js/main.6bcb56dd.chunk.js"
+    "static/js/main.18ea5823.chunk.js"
   ]
 }
