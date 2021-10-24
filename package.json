@@ -1,6 +1,6 @@
 {
   "name": "swiss-covid-certificate",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "homepage": "http://mwaeckerlin.github.io/swiss-covid-certificate",
   "private": false,
   "dependencies": {},
