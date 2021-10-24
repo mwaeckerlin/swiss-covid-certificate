@@ -8,7 +8,7 @@ Dies ist eine Simulation der Schweizer Covid Zertifikat App mit einem dummy QR-c
 
 Test it on: https://mwaeckerlin.github.io/swiss-covid-certificate/
 
-Scan to load App: 
+Scan to load App:  
 ![QR-Code](url.png)
 
 ## Screenshot
