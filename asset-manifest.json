@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/swiss-covid-certificate/static/css/main.8979889f.chunk.css",
+    "main.css": "/swiss-covid-certificate/static/css/main.f3850324.chunk.css",
     "main.js": "/swiss-covid-certificate/static/js/main.a9861c0c.chunk.js",
     "main.js.map": "/swiss-covid-certificate/static/js/main.a9861c0c.chunk.js.map",
     "runtime-main.js": "/swiss-covid-certificate/static/js/runtime-main.d2a6b15a.js",
@@ -10,13 +10,13 @@
     "static/js/3.c09e8eb6.chunk.js": "/swiss-covid-certificate/static/js/3.c09e8eb6.chunk.js",
     "static/js/3.c09e8eb6.chunk.js.map": "/swiss-covid-certificate/static/js/3.c09e8eb6.chunk.js.map",
     "index.html": "/swiss-covid-certificate/index.html",
-    "static/css/main.8979889f.chunk.css.map": "/swiss-covid-certificate/static/css/main.8979889f.chunk.css.map",
+    "static/css/main.f3850324.chunk.css.map": "/swiss-covid-certificate/static/css/main.f3850324.chunk.css.map",
     "static/js/2.6f9aea09.chunk.js.LICENSE.txt": "/swiss-covid-certificate/static/js/2.6f9aea09.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d2a6b15a.js",
     "static/js/2.6f9aea09.chunk.js",
-    "static/css/main.8979889f.chunk.css",
+    "static/css/main.f3850324.chunk.css",
     "static/js/main.a9861c0c.chunk.js"
   ]
 }
