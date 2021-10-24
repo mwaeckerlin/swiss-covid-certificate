@@ -7,10 +7,12 @@ body {
     width: 100vw;
     background-color: black;
     box-sizing: border-box;
+    font-size: calc( 100vw / 15);
 }
 
 main {
-    max-width: 16rem;
+    box-sizing: border-box;
+    width: 100%;
     background-color: white;
     margin: 0 auto;
     word-wrap: break-word;
@@ -35,6 +37,10 @@ header {
     height: 2em;
     background-color: white;
     border-radius: .5rem;
+}
+
+table {
+    width: 100%;
 }
 
 table tr td:first-child {
