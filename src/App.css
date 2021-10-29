@@ -128,7 +128,7 @@ table tr td:last-child {
 }
 
 .cert.verified canvas {
-    opacity: 20%;
+    opacity: .2;
 }
 
 .name {
