@@ -1,46 +1,94 @@
 :root {
-    --blue: #EEF;
+    --blue: #F0F0FA;
+    --green: #080;
+    --bg-green: #F0FAF0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
 }
 
 body {
     text-align: center;
-    width: 100vw;
-    background-color: black;
+    width: 100%;
+    background-color: white;
     box-sizing: border-box;
-    font-size: calc( 100vw / 15);
+    font-size: calc( 100vw / 17);
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 1.5rem;
+}
+
+button>svg {
+    width: 3em;
+    height: 3em;
+}
+
+button.verify {
+    z-index: 2000;
+    position: fixed;
+    bottom: 4rem;
+    right: 3rem;
+}
+
+header {
+    z-index: 1000;
+    padding-top: 1em;
+    font-weight: bold;
+    letter-spacing: .15em;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    margin: 0 4rem;
+    background-color: white;
+}
+
+header>svg {
+    color: red;
+    width: 1em;
+    height: 1em;
+    float: left;
 }
 
 main {
     box-sizing: border-box;
-    width: 100%;
+    width: calc(100% - 8rem);
     background-color: white;
     margin: 0 auto;
     word-wrap: break-word;
     border-radius: .5rem;
+    padding: 0;
+    margin: 0 4rem;
+}
+
+@media (min-width: 60rem) {
+    body {
+        font-size: calc( 60rem / 17);
+    }
+    main {
+        width: 60rem;
+        margin: 0 auto;
+    }
 }
 
 main>div {
-    margin: .25rem .5rem;
-    padding: .5rem;
-    width: calc(100% - 2rem);
-}
-
-header {
-    padding-top: 1em;
-    font-weight: bold;
-    letter-spacing: .15em;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2em;
-    background-color: white;
-    border-radius: .5rem;
+    margin: 2rem 0;
+    padding: 0;
+    width: 100%;
 }
 
 table {
     width: 100%;
+    padding: 1rem;
 }
 
 table tr td:first-child {
@@ -52,45 +100,122 @@ table tr td:last-child {
 }
 
 .fat {
-    font-weight: bolder;
+    font-weight: 600;
 }
 
 .left {
     text-align: left;
 }
 
-.cert canvas {
-    padding: 0;
-    margin: 0;
+.cert {
+    display: block;
+    position: relative;
     width: 100%;
 }
 
+.cert svg {
+    z-index: 500;
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    color: white;
+    top: calc(50% - 6rem);
+    left: calc(50% - 6rem);
+    padding: 0;
+    margin: 0;
+}
+
+.cert canvas {
+    padding: 0;
+    margin: 0 0 -1rem 0;
+    width: 100%;
+    height: auto;
+}
+
+.cert.verified {
+    background-color: var(--green);
+}
+
+.cert.verified canvas {
+    opacity: 20%;
+}
+
 .name {
-    font-weight: bolder;
+    font-weight: 600;
     font-size: 120%;
 }
 
+.date {
+    margin-bottom: 4rem;
+}
+
 .info {
+    position: relative;
     background-color: var(--blue);
     border-radius: .5em;
 }
 
-.info>div+div {
-    margin-top: 1rem;
+.info.verified {
+    background-color: var(--bg-green);
+}
+
+.info>div {
+    padding: 1rem;
 }
 
 .info+.data {
-    margin-top: 2rem;
+    margin-top: 6rem;
+}
+
+.loading {
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    display: block;
+    top: -0.5em;
+    left: calc(50% - 0.5em);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation-name: spin;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.info .loading.spinner {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: .8em;
+    height: .8em;
+    margin: .1em;
+}
+
+.checked {
+    color: green
 }
 
 .data {
-    border-top: 1px dashed var(--blue);
+    border-top: .5rem dashed var(--blue);
     text-align: left;
+    margin-top: 2rem;
+    padding: 2rem 0;
+    width: 100%;
 }
 
 .data div:nth-child(3n+1) {
-    padding-top: .5rem;
-    font-weight: bolder;
+    padding-top: 2rem;
+    font-weight: 600;
 }
 
 .data div:nth-child(3n+3) {

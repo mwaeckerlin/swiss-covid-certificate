@@ -1,0 +1,1 @@
+declare module '@pacta-app/qrcode-react'
