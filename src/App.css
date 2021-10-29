@@ -25,19 +25,19 @@ button {
     background-color: black;
     color: white;
     border-radius: 50%;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 button>svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 button.verify {
     z-index: 2000;
     position: fixed;
     bottom: 3rem;
-    right: 1rem;
+    right: 1.5rem;
 }
 
 header {
