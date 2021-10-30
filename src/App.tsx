@@ -33,9 +33,9 @@ const App = () => {
   date3.setDate(date3.getDate() + 27)
   return (
     <>
-      {state === Verify.INFO ? <button className="verify" onClick={() => { setState(Verify.LOADING); setTimeout(() => setState(Verify.VERIFIED), 1000) }}><svg viewBox="0 0 24 24">
+      <button className={"verify " + state} onClick={() => { setState(Verify.LOADING); setTimeout(() => setState(Verify.VERIFIED), 1000) }}><svg viewBox="0 0 24 24">
         <path fill="currentColor" d="M2 12C2 16.97 6.03 21 11 21C13.39 21 15.68 20.06 17.4 18.4L15.9 16.9C14.63 18.25 12.86 19 11 19C4.76 19 1.64 11.46 6.05 7.05C10.46 2.64 18 5.77 18 12H15L19 16H19.1L23 12H20C20 7.03 15.97 3 11 3C6.03 3 2 7.03 2 12Z" />
-      </svg></button> : null}
+      </svg></button>
       <div onClick={() => { setEdit(false); setState(Verify.INFO) }} onKeyDown={e => { if (e.key === "Enter") setEdit(false) }}>
         <header>
           <svg viewBox="0 0 24 24">
@@ -44,20 +44,18 @@ const App = () => {
           <div>COVID-ZERTIFIKAT</div>
         </header>
         <main>
-          <div className={"cert" + (state === Verify.VERIFIED ? " verified" : "")}>
+          <div className={"cert " + state}>
             {state === Verify.INFO ? null :
               state === Verify.LOADING
-                ? <svg className="loading spinner" viewBox="0 0 24 24">
+                ? <svg className="spinner" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" />
                 </svg>
-                : <svg className="loading checked" viewBox="0 0 24 24">
+                : <svg className="checked" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" />
                 </svg>}
             <QRCode
-              size={1024}
-              value="Sind alle impfwilligen erwachsenen Personen vollständig geimpft, beginnt die Normalisierungsphase. Der Bundesrat ist der Ansicht, dass dann keine starken gesellschaftlichen und wirtschaftlichen Einschränkungen mehr zu rechtfertigen sind. Die verbleibenden Massnahmen (Zugangs- und Kapazitätsbeschränkungen) sollen schrittweise aufgehoben werden. An dieser Strategie soll auch dann festgehalten werden, wenn die Impfbereitschaft der Bevölkerung entgegen der Erwartungen tief bleibt.
-
-          Auch nach der Impfung aller impfbereiten Personen wird aber das Virus weiter zirkulieren. Es ist davon auszugehen, dass sich langfristig nicht-geimpfte und nicht-genesene Personen anstecken werden. Je grösser der Anteil dieser Personen ist, desto wahrscheinlicher dürften mögliche Ausbrüche sein, und desto höher wird auch die Zahl der schweren Krankheitsverläufe und Todesfälle ausfallen. Mit der kostenlosen Impfung steht eine hoch wirksame Möglichkeit zur Verfügung, sich individuell vor einer Ansteckung und einer Erkrankung zu schützen. Diese Tatsache wird der Bundesrat bei seinen zukünftigen Entscheiden berücksichtigen und gleichzeitig den persönlichen Impfentscheid jeder und jedes einzelnen respektieren."
+              size={2048}
+              value="Sind alle impfwilligen erwachsenen Personen vollständig geimpft, beginnt die Normalisierungsphase. Der Bundesrat ist der Ansicht, dass dann keine starken gesellschaftlichen und wirtschaftlichen Einschränkungen mehr zu rechtfertigen sind. Die verbleibenden Massnahmen (Zugangs- und Kapazitätsbeschränkungen) sollen schrittweise aufgehoben werden. An dieser Strategie soll auch dann festgehalten werden, wenn die Impfbereitschaft der Bevölkerung entgegen der Erwartungen tief bleibt."
             />
           </div>
           <div onClick={e => { e.stopPropagation(); setEdit(true) }}>
@@ -82,7 +80,7 @@ const App = () => {
                   <path fill="currentColor" d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" />
                 </svg>
                 : <svg className="loading checked" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" />
+                  <path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
                 </svg>}
             {state === Verify.INFO
               ? <div>Nur mit einem Ausweisdokument gültig</div>
